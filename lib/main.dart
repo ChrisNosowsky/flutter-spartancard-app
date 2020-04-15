@@ -4,7 +4,15 @@ void main() => runApp(MaterialApp(
   home: SpartanCard(),
 ));
 
-class SpartanCard extends StatelessWidget {
+class SpartanCard extends StatefulWidget {
+  @override
+  _SpartanCardState createState() => _SpartanCardState();
+}
+
+class _SpartanCardState extends State<SpartanCard> {
+
+  int cardSwipes = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,6 +22,15 @@ class SpartanCard extends StatelessWidget {
         backgroundColor: Colors.green[900],
         elevation: 0.0,
       ),
+//      floatingActionButton: FloatingActionButton(
+//        onPressed: () {
+//          setState(() {
+//            cardSwipes += 1;
+//          });
+//        },
+//        child: Icon(Icons.add),
+//        backgroundColor: Colors.green[900],
+//      ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
         child: Column(
@@ -65,6 +82,24 @@ class SpartanCard extends StatelessWidget {
                   fontWeight: FontWeight.bold
               ),
             ),
+//            SizedBox(height: 30.0),
+//            Text(
+//              'CARD SWIPES',
+//              style: TextStyle(
+//                  color: Colors.grey,
+//                  letterSpacing: 2.0
+//              ),
+//            ),
+//            SizedBox(height: 10.0),
+//            Text (
+//              '$cardSwipes',
+//              style: TextStyle(
+//                  color: Colors.black54,
+//                  letterSpacing: 2.0,
+//                  fontSize: 28.0,
+//                  fontWeight: FontWeight.bold
+//              ),
+//            ),
             SizedBox(height: 30.0),
             Row(
               children: <Widget>[
@@ -82,12 +117,13 @@ class SpartanCard extends StatelessWidget {
                   ),
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),
     );
   }
 }
+
 
 
